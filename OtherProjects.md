@@ -16,3 +16,4 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
 * rifatx/ffyruledecoder - IntelliJ project setup - [https://github.com/rifatx/ffyruledecoder](https://github.com/rifatx/ffyruledecoder)  
 * mleblebici/Fortify - fpr2xlsx.py to help summarize the data so customers can better understand Fortify reports - [https://github.com/mleblebici/Fortify](https://github.com/mleblebici/Fortify)  
 * Dead Target link - [https://github.com/target/fortifyapi/commit/18ce25eb0dd082dd3017f27162740cb29f7bda85](https://github.com/target/fortifyapi/commit/18ce25eb0dd082dd3017f27162740cb29f7bda85)  
+* How to create an application in Foritfy SSC via the API [https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209](https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209)  
