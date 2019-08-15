@@ -3,10 +3,10 @@ param([String]$v='18.20')
 $buildId = '"<enterTheBuildID>"'
 $fprFileName = "<enterTheFPRFileName>.fpr"
 
-# These are the less volatile parameters
+# These are the less volatile parameters - But ensure they match your environment.
 # Executables/Commands:
 $sca = "C:\PROGRA~1\Fortify\Fortify_SCA_and_Apps_"+$v+"\bin\sourceanalyzer.exe"
-$mvn352 = "C:\Tools\apache-maven-3.5.2\bin\mvn.cmd"
+$mvn352 = "C:\<pathTo>\apache-maven-3.5.2\bin\mvn.cmd"
 
 # Passed Parameters used by the commands above, for various purposes:
 $chkVersionParams = '--version'
