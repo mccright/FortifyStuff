@@ -8,7 +8,7 @@ $fprFileName = "<enterTheFPRFileName>.fpr"
 $sca = "C:\PROGRA~1\Fortify\Fortify_SCA_and_Apps_"+$v+"\bin\sourceanalyzer.exe"
 $mvn352 = "C:\<pathTo>\apache-maven-3.5.2\bin\mvn.cmd"
 
-# Passed Parameters used by the commands above, for various purposes:
+# Parameters used by the commands above, for various purposes:
 $chkVersionParams = '--version'
 $cleanParms = '-b', 'randTesting', '-clean'
 $mvnCleanParms = 'clean'
