@@ -19,16 +19,16 @@ import os
 import time
 
 """
-This is a simple way to get a simple, light 
+This is a simple way to get a simple, light
 report started for those who cannot use
 and FPR file nor log into your SSC...
 """
 sys.stdout = Unbuffered(sys.stdout)
 
 """
-You need to edit the line below as our versions get upgraded...
+You need to edit the two lines below as your versions get upgraded...
 """
-fortifyVersion="18.20"
+fortifyVersion="19.1.2"
 jreVersion="1.8.0_212"
 fprUtil="C:\\PROGRA~1\\Fortify\\Fortify_SCA_and_Apps_"+fortifyVersion+"\\bin\\FPRUtility.bat"
 
@@ -36,7 +36,7 @@ files = [f for f in os.listdir('.') if os.path.isfile(f)]
 for filename in files:
       if fnmatch.fnmatch(filename, '*.fpr'):
          now = time.strftime("%c")
-         print ("") 
+         print ("")
          print ("------------------------------------------------------------")
          print ("Fortify Report filename: " + filename)
          print ("Report start: %s"  % now )
@@ -92,7 +92,7 @@ for filename in files:
          print ("Fortify SCA Errors for: " + filename)
          print ("------------------------------------------------------------")
          os.system(fprUtil + " -information -errors -project " + filename)
-         print ("") 
+         print ("")
          print ("")
          print ("------------------------------------------------------------")
          print ("Done with ad-hoc reporting on: " + filename)
