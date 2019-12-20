@@ -34,24 +34,6 @@ EOF
 set -o noglob
 DEBUG=false
 STARTTIMESTAMP=`date`
-echo This scan started at: $STARTTIMESTAMP
-
-# In a build server environment, you might want to
-# specify the full path to Fortify executables constructed 
-# from environment variables.
-# Generic check for Fortify sourceanalyzer.
-# Don't run if it is not in the path.
-if ! command -v "sourceanalyzer" > /dev/null 2>&1
-then
-    echo "error: cannot find sourceanalyzer - abort" 1>&2
-    exit 1
-fi
-# We know that sourceanalyzer is in the path
-# so set a variable to the fully qualified path.
-export SCA=`command -v "sourceanalyzer"`
-if [ $DEBUG = true ]; then
-    echo Using sca from:  $SCA
-fi
 
 # Check number of parameters. We must have 4,
 # but the last string can add more.
@@ -70,12 +52,31 @@ do
     -buildid)   export DIRTYBUILDID="$2"; shift;;
     -targetfiles)   export DIRTYTARGETFILES=\""$2"\"; shift;;
     -debug)   export DEBUG=true; shift;;
-    --help |-h) usage
+    --help | -help |-h) usage
                 exit 0;;
            *)   break; ;;
     esac
     shift
 done
+
+echo This scan started at: $STARTTIMESTAMP
+
+# In a build server environment, you might want to
+# specify the full path to Fortify executables constructed 
+# from environment variables.
+# Generic check for Fortify sourceanalyzer.
+# Don't run if it is not in the path.
+if ! command -v "sourceanalyzer" > /dev/null 2>&1
+then
+    echo "error: cannot find sourceanalyzer - abort" 1>&2
+    exit 1
+fi
+# We know that sourceanalyzer is in the path
+# so set a variable to the fully qualified path.
+export SCA=`command -v "sourceanalyzer"`
+if [ $DEBUG = true ]; then
+    echo Using sca from:  $SCA
+fi
 
 if [ $DEBUG = true ]; then
     echo Tainted inputs produce:
