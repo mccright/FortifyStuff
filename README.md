@@ -6,4 +6,4 @@ Simple resources for common work with the Fortify Static Code Security Analysis 
 * Scripts/report.py - Python script for quick, rough outline of all FPR files in the current directory.  I use it sometimes to quickly compare the 'current' report with the 'last' report to confirm that the targeted vulnerabilities were removed.  
 * Scripts/mergeAfterBuild.cmd - Check the integrity of the new FPR, then merge it with the last audited FPR file, & finally test it by opening it with Audit Workbench.  
 * Scripts/reportOnFPRs.py - A simple way to get a simple, light report started for those who cannot use and FPR file nor log into your SSC.  
-* Scripts/scanjs.sh - A simple script to simplify command line scans of static JavaScript apps on Linux.
+* Scripts/scanjs.sh - A simple script to simplify command line scans of static JavaScript apps on Linux.  This model should be useful via copy-morph in a range of different use cases.
