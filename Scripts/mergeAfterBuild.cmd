@@ -17,7 +17,7 @@ SET newestFPRFILE=%1
 SET myAuditedFPRFILE=%2
 SET myNewlyAuditedFPRFILE=%3
 SET fortifySCAVersion=%4
-@REM The %fortifySCAVersion% will be something like 17.20. 18.10, 18.20, 19.10, etc.
+@REM The %fortifySCAVersion% will be something like 17.20. 18.10, 18.20, 19.1.0, 19.1.2, etc.
 SET sectionSeparator="---------------------------------------------------------"
 @REM 
 SET FPRUtil="C:\Progra~1\Fortify\Fortify_SCA_and_Apps_%fortifySCAVersion%\bin\FPRUtility.bat"
