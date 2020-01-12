@@ -1,4 +1,4 @@
-param([String]$v='19.1.0')
+param([String]$v='19.1.2')
 # These are the most volatile parameters
 $buildId = '"<enterTheBuildID>"'
 $fprFileName = "<enterTheFPRFileName>.fpr"
