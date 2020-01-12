@@ -16,6 +16,7 @@
 #  -T, --tcp             use TCP only
 #  -d, --udp             use UDP only
 #  -u, --socket <socket> write to this Unix socket
+#  --                    End  the argument list.  This allows the message to start with a hyphen (-).
 #
 #        -s, --stderr
 #           Output the message to standard error as well as to the system log.
@@ -66,5 +67,12 @@ function logErr() {
     timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
     echo -e "${timeStamp} -- [ERROR]: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [ERROR]: ${1}"
+}
+
+function logCrit() {
+    logger -i -s -p local3.crit -t ${logTag} -- [CRITICAL] "${1}"
+    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
+    echo -e "${timeStamp} -- [CRITICAL]: ${1}" >> ${myLogFile}
+    echo -e "${timeStamp} -- [CRITICAL]: ${1}"
 }
 
