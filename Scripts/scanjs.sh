@@ -103,6 +103,8 @@ fi
 
 if [ $DEBUG = true ]; then
     # Get the currently-available RAM in Kilobytes
+    # For some Linux flavors, we need to grep for 'memfree' instead of 'memavailable'
+    # 'memfree' is needed when using original Windows Linux subsystem
     AVAILABLE_MEM=$(cat /proc/meminfo | grep -i memavailable | awk '{print $2}')
     # Test that it is at least our minimum of 1000000K (or 1GB)
     if [ "$AVAILABLE_MEM" -lt 1000000 ]; then
