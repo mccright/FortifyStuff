@@ -3,6 +3,7 @@
 Projects that may be useful to those who work with the Fortify Static Code Security Analysis stack  
 
 * mleblebici/Security-Cheat-Sheets - [https://github.com/mleblebici/Security-Cheat-Sheets/](https://github.com/mleblebici/Security-Cheat-Sheets/)  
+* Checks HP Fortify for projects and project versions. If the project doesn't exist, then the task is capable of creating the project and an initial version. If the project version doesn't exist, then the task is capable of creating the version and also capable of copying issues/suppressions from previous versions. [https://github.com/jlburck/FortifyVersionCheck](https://github.com/jlburck/FortifyVersionCheck)  
 * SSC on AWS - An article describing how to deploy SSC on AWS Elastic Beanstalk including some steps for automating SSC configuration. - [https://fortify.github.io/onprem/ssc-on-aws](https://fortify.github.io/onprem/ssc-on-aws)  
 * therealchunt/ssc - Fortify Software Security Center DockerFile (17.10) - [https://github.com/therealchunt/ssc](https://github.com/therealchunt/ssc)  
 * therealchunt/ssc_db - mysql database for SSC DockerFile (17.10) [https://github.com/therealchunt/ssc_db](https://github.com/therealchunt/ssc_db)  
@@ -19,3 +20,5 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
   * One version of the Target fortifyapi: [https://github.com/target/fortifyapi/tree/1.0.19](https://github.com/target/fortifyapi/tree/1.0.19)  
   * and another version #18: [https://github.com/target/fortifyapi/tree/18ce25eb0dd082dd3017f27162740cb29f7bda85](https://github.com/target/fortifyapi/tree/18ce25eb0dd082dd3017f27162740cb29f7bda85)  
 * How to create an application in Foritfy SSC via the API [https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209](https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209)  
+* Ligoj plugin for Fortify : issues and rate [https://github.com/ligoj/plugin-security-fortify](https://github.com/ligoj/plugin-security-fortify)  
+ 
