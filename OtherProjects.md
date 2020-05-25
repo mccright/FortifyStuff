@@ -5,6 +5,7 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
 * mleblebici/Security-Cheat-Sheets - [https://github.com/mleblebici/Security-Cheat-Sheets/](https://github.com/mleblebici/Security-Cheat-Sheets/)  
 * Checks HP Fortify for projects and project versions [PowerShell]. If the project doesn't exist, then the task is capable of creating the project and an initial version. If the project version doesn't exist, then the task is capable of creating the version and also capable of copying issues/suppressions from previous versions. [https://github.com/jlburck/FortifyVersionCheck](https://github.com/jlburck/FortifyVersionCheck)  
 * Communicate with Fortify Software Security Center through REST API in java, a swagger generated client [Java] [https://github.com/fortify/ssc-restapi-client](https://github.com/fortify/ssc-restapi-client)  
+* Golang fortify client generated from official swagger docs [https://github.com/piper-validation/fortify-client-go](https://github.com/piper-validation/fortify-client-go)  
 * SSC on AWS - An article describing how to deploy SSC on AWS Elastic Beanstalk including some steps for automating SSC configuration. - [https://fortify.github.io/onprem/ssc-on-aws](https://fortify.github.io/onprem/ssc-on-aws)  
 * therealchunt/ssc - Fortify Software Security Center DockerFile (17.10) - [https://github.com/therealchunt/ssc](https://github.com/therealchunt/ssc)  
 * therealchunt/ssc_db - mysql database for SSC DockerFile (17.10) [https://github.com/therealchunt/ssc_db](https://github.com/therealchunt/ssc_db)  
