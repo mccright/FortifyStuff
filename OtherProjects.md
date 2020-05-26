@@ -23,5 +23,6 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
   * One version of the Target fortifyapi: [https://github.com/target/fortifyapi/tree/1.0.19](https://github.com/target/fortifyapi/tree/1.0.19)  
   * and another version #18: [https://github.com/target/fortifyapi/tree/18ce25eb0dd082dd3017f27162740cb29f7bda85](https://github.com/target/fortifyapi/tree/18ce25eb0dd082dd3017f27162740cb29f7bda85)  
 * How to create an application in Foritfy SSC via the API [https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209](https://community.microfocus.com/t5/Fortify-User-Discussions/How-to-create-application-in-SSC-with-REST-API/td-p/1553209)  
+* Pull dynamic scan form configuration for all applications within your portal [https://github.com/reggiebIV/Fortify-on-Demand-Dynamic-Form-Configuration-Report](https://github.com/reggiebIV/Fortify-on-Demand-Dynamic-Form-Configuration-Report)  
 * Ligoj plugin for Fortify : issues and rate [https://github.com/ligoj/plugin-security-fortify](https://github.com/ligoj/plugin-security-fortify)  
  
