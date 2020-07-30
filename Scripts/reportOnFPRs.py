@@ -28,7 +28,7 @@ sys.stdout = Unbuffered(sys.stdout)
 """
 You need to edit the two lines below as your versions get upgraded...
 """
-fortifyVersion="19.1.2"
+fortifyVersion="20.1.0"
 jreVersion="1.8.0_212"
 fprUtil="C:\\PROGRA~1\\Fortify\\Fortify_SCA_and_Apps_"+fortifyVersion+"\\bin\\FPRUtility.bat"
 
