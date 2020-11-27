@@ -1,6 +1,16 @@
 #!/bin/bash
 
 # Usage: This script should be sourced into your scripts to provide these logging functions
+#
+# Here are some simplified examples for how this is used in your script
+# !/bin/bash
+#  source ~/bin/logit.sh
+#  logTag="InScriptTesting"
+#  myLogFile="${myLogDir}/${logTag}-${TIMESTAMP}.log"
+#  logInfo "This is a test.  Logging an INFO message. ${logTag}"
+#  logWarn "This is a test.  Logging an WARN message. ${logTag}"
+#  logErr "This is a test.  Logging an ERROR message. ${logTag}"
+#
 # Thanks to: https://github.com/cons3rt/test-asset-fortify-simple/blob/master/scripts/run_fortify.sh
 #
 # logger Options:
@@ -25,22 +35,22 @@
 #           Mark every line to be logged with the specified tag.  The default tag is the  name
 #           of the user logged in on the terminal (or a user name based on effective user ID).
 #
-# Here are some simplified examples for how this is used in your script
-#!/bin/bash
-#  source ~/bin/logit.sh
-#  logTag="InScriptTesting"
-#  logInfo "This is a test.  Logging an INFO message using ${thisScript}"
-#  logWarn "This is a test.  Logging an WARN message using ${thisScript}"
-#  logErr "This is a test.  Logging an ERROR message using ${thisScript}"
-#
+
 #
 
-TIMESTAMP=$(date "+%Y-%m-%d-%H%M")
+TIMESTAMP=$(date "+%Y-%m-%d-%H%M%S")
 # Include a use-case-specific logTag in your script
 logTag="logger"
-thisScript="ScriptName: ${0}"
+thisLogScript="${0}"
+# put this variable in your script to support script-unique log names
+thisScript="${0}"
+# Path to the log directory
 myLogDir="/home/${USER}/logs"
-myLogFile="${myLogDir}/${logTag}-${TIMESTAMP}.log"
+# myLogFile="${myLogDir}/${logTag}-${TIMESTAMP}.log"
+# In some environments logging by script name is more appropriate
+# Set the script variable in your script:
+# thisScript="${0}"
+myLogFile="${myLogDir}/${thisScript}-${TIMESTAMP}.log"
 
 # Set up the log file
 mkdir -p ${myLogDir}
@@ -50,29 +60,29 @@ chmod 644 ${myLogFile}
 
 function logInfo() {
     logger -i -s -p syslog.info -t ${logTag} -- [INFO] "${1}"
-    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
-    echo -e "${timeStamp} -- [INFO]: ${1}" >> ${myLogFile}
+    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
+    echo -e "${timeStamp} -- [INFO] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [INFO]: ${1}"
 }
 
 function logWarn() {
     logger -i -s -p local3.warning -t ${logTag} -- [WARN] "${1}"
-    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
-    echo -e "${timeStamp} -- [WARN]: ${1}" >> ${myLogFile}
+    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
+    echo -e "${timeStamp} -- [WARN] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [WARN]: ${1}"
 }
 
 function logErr() {
     logger -i -s -p local3.err -t ${logTag} -- [ERROR] "${1}"
-    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
-    echo -e "${timeStamp} -- [ERROR]: ${1}" >> ${myLogFile}
+    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
+    echo -e "${timeStamp} -- [ERROR] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [ERROR]: ${1}"
 }
 
 function logCrit() {
     logger -i -s -p local3.crit -t ${logTag} -- [CRITICAL] "${1}"
-    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S")
-    echo -e "${timeStamp} -- [CRITICAL]: ${1}" >> ${myLogFile}
+    timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
+    echo -e "${timeStamp} -- [CRITICAL]: ${thisScript} ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [CRITICAL]: ${1}"
 }
 
