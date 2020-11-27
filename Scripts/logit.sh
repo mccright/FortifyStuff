@@ -11,6 +11,19 @@
 #  logWarn "This is a test.  Logging an WARN message. ${logTag}"
 #  logErr "This is a test.  Logging an ERROR message. ${logTag}"
 #
+# or
+# !/bin/bash
+#  source ~/bin/logit.sh
+#  thisScript="${0}"
+#  logTag="InScriptTesting"
+#  logInfo "${0} - This is a test.  Logging an INFO message ${logTag}"
+#  logTag="NewSectionTesting"
+#  logInfo "${0} - This is a test.  Logging an INFO message ${logTag}"
+#  logTag="EndOfNewSectionTesting"
+#  logWarn "${0} - This is a test.  Logging an WARN message ${logTag}"
+#  logTag="New function for input"
+#  logErr "${0} - This is a test.  Logging an ERROR message ${logTag}"
+#
 # Thanks to: https://github.com/cons3rt/test-asset-fortify-simple/blob/master/scripts/run_fortify.sh
 #
 # logger Options:
@@ -36,8 +49,6 @@
 #           of the user logged in on the terminal (or a user name based on effective user ID).
 #
 
-#
-
 TIMESTAMP=$(date "+%Y-%m-%d-%H%M%S")
 # Include a use-case-specific logTag in your script
 logTag="logger"
@@ -59,28 +70,28 @@ touch ${myLogFile}
 chmod 644 ${myLogFile}
 
 function logInfo() {
-    logger -i -s -p syslog.info -t ${logTag} -- [INFO] "${1}"
+    logger -i -e -p syslog.info -t ${logTag} -- [INFO] "${1}"
     timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
     echo -e "${timeStamp} -- [INFO] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [INFO]: ${1}"
 }
 
 function logWarn() {
-    logger -i -s -p local3.warning -t ${logTag} -- [WARN] "${1}"
+    logger -i -e -p local3.warning -t ${logTag} -- [WARN] "${1}"
     timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
     echo -e "${timeStamp} -- [WARN] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [WARN]: ${1}"
 }
 
 function logErr() {
-    logger -i -s -p local3.err -t ${logTag} -- [ERROR] "${1}"
+    logger -i -e -p local3.err -t ${logTag} -- [ERROR] "${1}"
     timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
     echo -e "${timeStamp} -- [ERROR] ${thisScript}: ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [ERROR]: ${1}"
 }
 
 function logCrit() {
-    logger -i -s -p local3.crit -t ${logTag} -- [CRITICAL] "${1}"
+    logger -i -e -p local3.crit -t ${logTag} -- [CRITICAL] "${1}"
     timeStamp=$(date "+%Y-%m-%d-%H:%M:%S %:z %Z")
     echo -e "${timeStamp} -- [CRITICAL]: ${thisScript} ${1}" >> ${myLogFile}
     echo -e "${timeStamp} -- [CRITICAL]: ${1}"
