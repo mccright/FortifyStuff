@@ -25,7 +25,8 @@ You need to edit the 3 lines below as your versions get upgraded...
 """
 fortifyVersion="20.1.0"
 jreVersion="1.8.0_202"
-fprUtil="C:\\PROGRA~1\\Fortify\\Fortify_SCA_and_Apps_"+fortifyVersion+"\\bin\\FPRUtility.bat"
+# fprUtil="C:\\PROGRA~1\\Fortify\\Fortify_SCA_and_Apps_"+fortifyVersion+"\\bin\\FPRUtility.bat"
+fprUtil = shutil.which("FPRUtility.bat")
 files = [f for f in os.listdir('.') if os.path.isfile(f)]
 for filename in files:
       if fnmatch.fnmatch(filename, '*.fpr'):
