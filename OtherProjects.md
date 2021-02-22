@@ -2,6 +2,10 @@
 
 Projects that may be useful to those who work with the Fortify Static Code Security Analysis stack  
 
+* GitHub.com Actions:
+  * "Fortify ScanCentral Scan" -- Test source with Fortify SAST scans [https://github.com/marketplace/actions/fortify-scancentral-scan](https://github.com/marketplace/actions/fortify-scancentral-scan)  
+  * "Generate SARIF from Fortify on Demand" -- Generate SARIF file from Fortify on Demand SAST results for import to GitHub [https://github.com/marketplace/actions/generate-sarif-from-fortify-on-demand](https://github.com/marketplace/actions/generate-sarif-from-fortify-on-demand)  
+  * "Fortify on Demand Scan" -- Test source with Fortify SaaS scans [https://github.com/marketplace/actions/fortify-on-demand-scan](https://github.com/marketplace/actions/fortify-on-demand-scan)  
 * mleblebici/Security-Cheat-Sheets - [https://github.com/mleblebici/Security-Cheat-Sheets/](https://github.com/mleblebici/Security-Cheat-Sheets/)  
 * Checks HP Fortify for projects and project versions [PowerShell]. If the project doesn't exist, then the task is capable of creating the project and an initial version. If the project version doesn't exist, then the task is capable of creating the version and also capable of copying issues/suppressions from previous versions. [https://github.com/jlburck/FortifyVersionCheck](https://github.com/jlburck/FortifyVersionCheck)  
 * Communicate with Fortify Software Security Center through REST API in java, a swagger generated client [Java] [https://github.com/fortify/ssc-restapi-client](https://github.com/fortify/ssc-restapi-client)  
