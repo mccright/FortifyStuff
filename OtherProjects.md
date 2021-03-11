@@ -29,4 +29,5 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
 * Ligoj plugin for Fortify : issues and rate [https://github.com/ligoj/plugin-security-fortify](https://github.com/ligoj/plugin-security-fortify)  
 * Fortify Subset of a broader ScanPlatformTool - [https://github.com/wilton2017/ScanPlatformTool/tree/master](https://github.com/wilton2017/ScanPlatformTool/tree/master)  
 * Saltworks Security Fortify client project in Python - [https://github.com/gatsalt/FDRewrite](https://github.com/gatsalt/FDRewrite)  
-* 
+* Fortify ScanCentral GitLab CI Templates, this seems like something every GitLab project should use - [https://gitlab.com/Fortify/gitlab-ci-templates](https://gitlab.com/Fortify/gitlab-ci-templates)  
+* Fortify ScanCentral Client - A github.com Action, this seems like something every GitHub.com project should use - [https://github.com/fortify/gha-setup-scancentral-client](https://github.com/fortify/gha-setup-scancentral-client)  
