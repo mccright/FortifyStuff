@@ -11,6 +11,8 @@ import requests
 
 
 def main(argv):
+    if sys.version_info < (3, 5):
+        raise Exception("Use only with Python 3.5 or higher")
     user = ''
     repo = ''
     if not (sys.argv[1:]):
