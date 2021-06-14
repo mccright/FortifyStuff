@@ -73,7 +73,8 @@ def main(argv):
     print(reposeparator)
 
     numberoffiles = len(response["tree"])
-    print(f"Github user: {orgname}")
+    print(f"Github user: {username}")
+    print(f"Github org:  {orgname}")
     print(f"Github repo: {repo}")
     print(f"{str(numberoffiles)} files in {orgname}/{repo} include: ")
     for file in response["tree"]:
