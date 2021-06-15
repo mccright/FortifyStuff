@@ -10,7 +10,14 @@ import sys
 # This version is for GH enterprise environments where there are organizations
 # and repositories.
 
-# inputs
+# INPUTS:
+# **Have your github.com PAT in a user environment variable and fetch it from there - or
+#   use the practice appropriate for your situation.
+# If you handle your PAT differently, adjust the code.
+#   -u <user> -- where this is your github.com username - the name associated with the PAT
+#   -o <organization> -- the target organization name (authorize your PAT for the target orgs)
+#   -r <repo> -- the target repository name
+#   -b <branch> -- the target branch in the targeted reposity
 ####
 
 
@@ -21,41 +28,45 @@ def main(argv):
     username = ''
     orgname = ''
     repo = ''
+    branchname = ''
 
     if not (sys.argv[1:]):
         print('Get list of repo tree file names from github.com.')
-        print('Inputs required: getGHorgtree.py -u <user> -r <repo> -o <organization>')
+        print('Inputs required: getGHorgtree.py -u <user> -o <organization> -r <repo> -b <branch>')
         sys.exit(2)
 
     try:
-        opts, args = getopt.getopt(argv, 'hu:r:o:', ['user=','repo=','org='])
+        opts, args = getopt.getopt(argv, 'hu:o:r:b:', ['user=','repo=','org=','branch='])
     except getopt.GetoptError as err:
         print(err)
         print('Get list of repo tree file names from github.com.')
-        print('getGHorgtree.py -u <user> -r <repo> -o <organization>')
+        print('getGHorgtree.py -u <user> -o <organization> -r <repo> -b <branch>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-h':
             print('Get list of repo tree file names from github.com.')
-            print('getGHorgtree.py -u <user> -r <repo> -o <organization>')
+            print('getGHorgtree.py -u <user> -o <organization> -r <repo> -b <branch>')
             sys.exit()
         elif opt in ("-u", "--user"):
             username = arg
-        elif opt in ("-r", "--repo"):
-            repo = arg
         elif opt in ("-o", "--org"):
             orgname = arg
+        elif opt in ("-r", "--repo"):
+            repo = arg
+        elif opt in ("-b", "--branch"):
+            branchname = arg
 
     """
     username = '<UserNameHere>'
     orgname = '<OrganizationNameHere>'
     repo = '<RepositoryNameHere>'
+    branchname = '<branchNameHere>'
     token = '<PersonalTokenFromEnvironmentorSecretStoreHere>'
     # or get the token from the environment:
     """ 
     token = os.environ['GITHUB_TOKEN']
-    url = "https://api.github.com/repos/{}/{}/git/trees/main?recursive=1".format(orgname, repo)
+    url = "https://api.github.com/repos/{}/{}/git/trees/{}?recursive=1".format(orgname, repo, branchname)
     reposeparator = "="*80
 
     # Authenticate & create session
@@ -76,7 +87,8 @@ def main(argv):
     print(f"Github user: {username}")
     print(f"Github org:  {orgname}")
     print(f"Github repo: {repo}")
-    print(f"{str(numberoffiles)} files in {orgname}/{repo} include: ")
+    print(f"Github repo branch: {branchname}")
+    print(f"{str(numberoffiles)} files in {orgname}/{repo}/{branchname} include: ")
     for file in response["tree"]:
         print(file["path"])
 
