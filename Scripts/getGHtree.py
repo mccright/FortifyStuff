@@ -11,7 +11,7 @@ import requests
 
 
 def main(argv):
-    if sys.version_info < (3, 5):
+    if sys.version_info < (3, 7):
         raise Exception("Use only with Python 3.5 or higher")
     user = ''
     repo = ''
@@ -21,28 +21,30 @@ def main(argv):
         sys.exit(2)
 
     try:
-        opts, args = getopt.getopt(argv, 'hu:r:', ['user=','repo='])
+        opts, args = getopt.getopt(argv, 'hu:r:b:', ['user=', 'repo=', 'branch='])
     except getopt.GetoptError as err:
         print(err)
         print('Get list of repo tree file names from github.com.')
-        print('getGHtree.py -u <user> -r <repo>')
+        print('getGHtree.py -u <user> -r <repo> -b <branch>')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-h':
             print('Get list of repo tree file names from github.com.')
-            print('gettest.py -u <user> -r <repo>')
+            print('gettest.py -u <user> -r <repo> -b <branch>')
             sys.exit()
         elif opt in ("-u", "--user"):
             user = arg
         elif opt in ("-r", "--repo"):
             repo = arg
+        elif opt in ("-b", "--branch"):
+            branchname = arg
 
     # Test Data:
     # user = "mccright"
     # repo = "PythonLoggingExamples"
 
-    url = "https://api.github.com/repos/{}/{}/git/trees/main?recursive=1".format(user, repo)
+    url = "https://api.github.com/repos/{}/{}/git/trees/{}?recursive=1".format(user, repo, branchname)
     r = requests.get(url)
     res = r.json()
     numberoffiles = len(res["tree"])
