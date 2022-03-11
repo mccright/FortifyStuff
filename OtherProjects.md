@@ -36,4 +36,4 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
 * Ligoj plugin for Fortify : issues and rate [https://github.com/ligoj/plugin-security-fortify](https://github.com/ligoj/plugin-security-fortify)  
 * Fortify Subset of a broader ScanPlatformTool - [https://github.com/wilton2017/ScanPlatformTool/tree/master](https://github.com/wilton2017/ScanPlatformTool/tree/master)  
 * Saltworks Security Fortify client project in Python - [https://github.com/gatsalt/FDRewrite](https://github.com/gatsalt/FDRewrite)  
-* 
+* Here is an ancient script to interact with FPR files that may have something of value.  It includes some data structure and FPR file navigation hints that may fit a range of use cases [https://github.com/nicolasrod/fortipy](https://github.com/nicolasrod/fortipy)  
