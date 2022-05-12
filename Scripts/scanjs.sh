@@ -1,7 +1,7 @@
 #!/bin/bash
 #  Cobbled together by Matt McCright for command line scans on Linux.
 #
-#  Licensed under the MIT (the "License").
+#  Licensed under the MIT License (the "License").
 #  You may not use this file except in compliance with the License.
 #
 # This script best used with JavaScript apps.
@@ -66,6 +66,10 @@ echo This scan started at: $STARTTIMESTAMP
 # from environment variables.
 # Generic check for Fortify sourceanalyzer.
 # Don't run if it is not in the path.
+# Depending on the nature of the host and your use case, 
+# finding the path # this way and then executing sourceanalyzer 
+# may be too unsafe.  Don't just copy and use this script 
+# without taking the time to understand your risk management needs.
 if ! command -v "sourceanalyzer" > /dev/null 2>&1
 then
     echo "error: cannot find sourceanalyzer - abort" 1>&2
