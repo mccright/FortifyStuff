@@ -1,7 +1,7 @@
 # Other Fortify-Related Projects To Watch  
 
-Projects that may be useful to those who work with the Fortify Static Code Security Analysis stack  
-
+Projects that may be useful to those who work with the Fortify Static Code Security Analysis stack 
+* Install Fortify client tooling in a pipeline (*or related use case*) [https://github.com/fortify/FortifyToolsInstaller](https://github.com/fortify/FortifyToolsInstaller/)  
 * GitHub.com Actions:
   * "Fortify ScanCentral Scan" -- Test source with Fortify SAST scans [https://github.com/marketplace/actions/fortify-scancentral-scan](https://github.com/marketplace/actions/fortify-scancentral-scan)  
   * Fortify ScanCentral Client -- The source code - [https://github.com/fortify/gha-setup-scancentral-client](https://github.com/fortify/gha-setup-scancentral-client)  
@@ -11,7 +11,7 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
   * "Fortify ScanCentral GitLab CI Templates" -- this seems like something every GitLab project should use [https://gitlab.com/Fortify/gitlab-ci-templates](https://gitlab.com/Fortify/gitlab-ci-templates)  
 * mleblebici/Security-Cheat-Sheets - [https://github.com/mleblebici/Security-Cheat-Sheets/](https://github.com/mleblebici/Security-Cheat-Sheets/)  
 * Checks Fortify for projects and project versions [PowerShell]. If the project doesn't exist, then the task is capable of creating the project and an initial version. If the project version doesn't exist, then the task is capable of creating the version and also capable of copying issues/suppressions from previous versions. [https://github.com/jlburck/FortifyVersionCheck](https://github.com/jlburck/FortifyVersionCheck)  
-* Communicate with Fortify Software Security Center through REST API in java, a swagger generated client [Java] [https://github.com/fortify/ssc-restapi-client](https://github.com/fortify/ssc-restapi-client)  
+* Communicate with Fortify Software Security Center through REST API in java, a swagger generated client [Java] [https://github.com/fortify/ssc-restapi-client](https://github.com/fortify/ssc-restapi-client).  The API "*schema*" is well documented in the [swagger/spec.json](https://raw.githubusercontent.com/fortify/ssc-restapi-client/master/src/swagger/spec.json) file.  
 * Golang fortify client generated from official swagger docs [https://github.com/piper-validation/fortify-client-go](https://github.com/piper-validation/fortify-client-go)  
 * Upload to the Fortify on Demand and optionally fill out dynamic scan forms upon application onboarding [https://github.com/reggiebIV/Fortify-on-Demand-Application-Uploader](https://github.com/reggiebIV/Fortify-on-Demand-Application-Uploader)  
 * SSC on AWS - An article describing how to deploy SSC on AWS Elastic Beanstalk including some steps for automating SSC configuration. - [https://fortify.github.io/onprem/ssc-on-aws](https://fortify.github.io/onprem/ssc-on-aws)  
@@ -36,5 +36,6 @@ Projects that may be useful to those who work with the Fortify Static Code Secur
 * Ligoj plugin for Fortify : issues and rate [https://github.com/ligoj/plugin-security-fortify](https://github.com/ligoj/plugin-security-fortify)  
 * Fortify Subset of a broader ScanPlatformTool - [https://github.com/wilton2017/ScanPlatformTool/tree/master](https://github.com/wilton2017/ScanPlatformTool/tree/master)  
 * Saltworks Security Fortify client project in Python - [https://github.com/gatsalt/FDRewrite](https://github.com/gatsalt/FDRewrite)  
+* A model Fortify SSC client by [Behlül Şahin](https://github.com/behlulsahin): [https://github.com/behlulsahin/fortify/blob/master/python3/ssc-client3.py](https://github.com/behlulsahin/fortify/blob/master/python3/ssc-client3.py)  
 * A relatively ancient inactive script to compare to FPR files that may have something of value. [https://github.com/EricRohlfs/FortifyCompare](https://github.com/EricRohlfs/FortifyCompare)  
 * Here is an another ancient inactive script to interact with FPR files that may have something of value.  It includes some data structure and FPR file navigation hints that may fit a range of use cases [https://github.com/nicolasrod/fortipy](https://github.com/nicolasrod/fortipy)  
