@@ -63,6 +63,28 @@ D:\dev>docker run -t --rm -v "D:\\dev\\PythonStuff:/repo" crazymax/linguist:late
 
 D:\dev>
 ```
+and here are a couple more language-diverse examples:  
+```terminal
+D:\dev>docker run -t --rm -v "D:\\dev\\book:/repo" crazymax/linguist:latest
+52.62%  26781      Python
+40.22%  20470      TeX
+2.61%   1327       Shell
+2.30%   1169       CSS
+2.25%   1146       Makefile
+
+D:\dev>
+```
+and  
+```terminal
+D:\dev>docker run -t --rm -v "D:\\dev\\postb.in:/repo" crazymax/linguist:latest
+61.52%  41690      JavaScript
+35.95%  24362      Pug
+1.93%   1309       CSS
+0.57%   385        Makefile
+0.03%   20         Procfile
+
+D:\dev>
+```
 
 
 ## ADDITIONAL REFERENCES:  
