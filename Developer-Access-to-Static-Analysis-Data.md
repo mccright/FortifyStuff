@@ -54,7 +54,15 @@ The API consumer uses our information to identify and prioritise (*new*) units o
 * [STIX](https://stixproject.github.io/about/): STIX is a standard for documenting threat information more applicable to the broader category of cyber-threats.  It seems not well aligned to the specific needs of communicating SCSA vulnerability outputs to developers.  
 
 
+### What languages are in a given target repository?  
+There are situations where you may be *given* a repository without any accompanying information...  That makes is a challenge to configure an effective static analysis scan.  
+*[crazymax](https://crazymax.dev/)* assembled a Docker image -- [crazymax/docker-linguist](https://github.com/crazy-max/docker-linguist) -- that runs [GitHub Linguist](https://github.com/github/linguist), a library used on GitHub.com to detect blob languages.  You can use is to easily and *reasonable accurately* identify what languages are used in a given local repository.  Here is an example for a repository containing only Python code:  
+```terminal
+D:\dev>docker run -t --rm -v "D:\\dev\\PythonStuff:/repo" crazymax/linguist:latest
+100.00% 57193      Python
 
+D:\dev>
+```
 
 
 ## ADDITIONAL REFERENCES:  
