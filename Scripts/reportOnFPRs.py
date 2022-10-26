@@ -21,7 +21,11 @@ import time
 """
 This is a simple way to get a simple, light
 report started for those who cannot use
-and FPR file nor log into your SSC...
+an FPR file nor log into your SSC...
+NOTE: There have been reports of incomplete results 
+being emitted by Fortify's ReportGenerator.bat. See 
+an example in the issue: https://github.com/DefectDojo/django-DefectDojo/issues/1657 
+(go down to "dougmcdorman commented on Nov 26, 2019" 
 """
 sys.stdout = Unbuffered(sys.stdout)
 
