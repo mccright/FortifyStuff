@@ -12,6 +12,7 @@ class Unbuffered(object):
 
 import sys
 import os
+import shutil
 import fnmatch
 from subprocess import call
 import subprocess
